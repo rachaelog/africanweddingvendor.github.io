@@ -61,43 +61,90 @@
       <div class="u-clearfix u-sheet u-sheet-1">
         <h1 class="u-text u-text-default u-text-1">Contact Us</h1>
         <div class="u-form u-form-1">
-          <form action="connection.php" method="POST" class="u-clearfix u-form-spacing-20 u-form-vertical u-inner-form" style="padding: 10px" source="email" name="form">
+        <//form action="connection.php" method="POST" class="u-clearfix u-form-spacing-20 u-form-vertical u-inner-form" style="padding: 10px" source="email" name="form">
 
+            <div class="panel-body">
+              <form action="connect.php" method="post">
+                <div class="form-group">
+                  <label for="firstName">First Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="firstName"
+                    name="firstName"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="lastName"
+                    name="lastName"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="gender">Gender</label>
+                  <div>
+                    <label for="male" class="radio-inline"
+                      ><input
+                        type="radio"
+                        name="gender"
+                        value="m"
+                        id="male"
+                      />Male</label
+                    >
+                    <label for="female" class="radio-inline"
+                      ><input
+                        type="radio"
+                        name="gender"
+                        value="f"
+                        id="female"
+                      />Female</label
+                    >
+                    <label for="others" class="radio-inline"
+                      ><input
+                        type="radio"
+                        name="gender"
+                        value="o"
+                        id="others"
+                      />Others</label
+                    >
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    name="password"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="number">Phone Number</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="number"
+                    name="number"
+                  />
+                </div>
+                <input type="submit" class="btn btn-primary" />
+              </form>
+            </div>
+            <div class="panel-footer text-right">
 
-            <div class="form-group">
-                            <label for="name">Name</label>
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="email"
-                              name="email"
-                            />
-                          </div>
-
-            <div class="form-group">
-                            <label for="email">Email</label>
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="email"
-                              name="email"
-                            />
-                          </div>
-
-                          <div class="form-group">
-                                          <label for="message">message</label>
-                                          <input
-                                            type="text"
-                                            class="form-control"
-                                            id="email"
-                                            name="email"
-                                          />
-                                        </div>
-                                        <input type="submit" class="btn btn-primary" />
-
-
-
-            <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
+            <//div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
           <//div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
             <input type="hidden" value="" name="recaptchaResponse">
           </form>
