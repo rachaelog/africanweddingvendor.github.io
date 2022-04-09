@@ -5,9 +5,8 @@ if(!empty($_SESSION["id"])){
 }
 if(isset($_POST["submit"])){
   $name = $_POST["name"];
-  $username = $_POST["name"];
   $email = $_POST["email"];
-  $duplicate = mysqli_query($conn, "SELECT * FROM name WHERE username = '$name' OR email = '$email'");
+  $duplicate = mysqli_query($conn, "SELECT * FROM name WHERE name = '$name' OR email = '$email'");
   if(mysqli_num_rows($duplicate) > 0){
     echo
     "<script> alert('Username or Email Has Already Taken'); </script>";
