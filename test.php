@@ -1,41 +1,34 @@
 <?php
-require 'config.php';
-if(!empty($_SESSION["id"])){
-  header("Location: index.php");
-}
-if(isset($_POST["submit"])){
-  $name = $_POST["name"];
-  $email = $_POST["email"];
-  $duplicate = mysqli_query($conn, "SELECT * FROM name WHERE name = '$name' OR email = '$email'");
-  if(mysqli_num_rows($duplicate) > 0){
-    echo
-    "<script> alert('Username or Email Has Already Taken'); </script>";
-  }
-
-}
-?>
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Registration</title>
-  </head>
-  <body>
-    <h2>Registration</h2>
-    <form class="" action="" method="post" autocomplete="off">
-      <label for="name">Name : </label>
-      <input type="text" name="name" id = "name" required value=""> <br>
-      <label for="username">Username : </label>
-      <input type="text" name="username" id = "username" required value=""> <br>
-      <label for="email">Email : </label>
-      <input type="email" name="email" id = "email" required value=""> <br>
-      <label for="password">Password : </label>
-      <input type="password" name="password" id = "password" required value=""> <br>
-      <label for="confirmpassword">Confirm Password : </label>
-      <input type="password" name="confirmpassword" id = "confirmpassword" required value=""> <br>
-      <button type="submit" name="submit">Register</button>
+$action=$_REQUEST['action'];
+if ($action=="")    /* display the contact form */
+    {
+    ?>
+    <form  action="" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="action" value="submit">
+    Your name:<br>
+    <input name="name" type="text" value="" size="30"/><br>
+    Your email:<br>
+    <input name="email" type="text" value="" size="30"/><br>
+    Your message:<br>
+    <textarea name="message" rows="7" cols="30"></textarea><br>
+    <input type="submit" value="Send email"/>
     </form>
-    <br>
-    <a href="login.php">Login</a>
-  </body>
-</html>
+    <?php
+    }
+else                /* send the submitted data */
+    {
+    $name=$_REQUEST['name'];
+    $email=$_REQUEST['email'];
+    $message=$_REQUEST['message'];
+    if (($name=="")||($email=="")||($message==""))
+        {
+        echo "All fields are required, please fill <a href=\"\">the form</a> again.";
+        }
+    else{
+        $from="From: $name<$email>\r\nReturn-path: $email";
+        $subject="Message sent using your contact form";
+        mail("realso23@yahoo.com", $subject, $message, $from);
+        echo "Email sent!";
+        }
+    }
+?>
