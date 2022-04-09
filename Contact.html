@@ -61,7 +61,7 @@
       <div class="u-clearfix u-sheet u-sheet-1">
         <h1 class="u-text u-text-default u-text-1">Contact Us</h1>
         <div class="u-form u-form-1">
-          <form action="#" method="POST" class="u-clearfix u-form-spacing-20 u-form-vertical u-inner-form" style="padding: 10px" source="custom" name="form">
+            <form action="https://formspree.io/f/xeqnrojl" method="POST" class="u-clearfix u-form-spacing-20 u-form-vertical u-inner-form" style="padding: 10px" source="email" name="form">
             <div class="u-form-group u-form-name u-label-none">
               <label for="name-3b9a" class="u-label">Name</label>
               <input type="text" placeholder="Enter your Name" id="name-3b9a" name="name" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-1" required="">
@@ -72,112 +72,17 @@
             </div>
             <div class="u-form-group u-form-message u-label-none">
               <label for="message-3b9a" class="u-label">Message</label>
-              <textarea placeholder="Enter your message" rows="4" cols="50" id="message-3b9a" name="message" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-3" required="" maxlength="50"></textarea>
+              <textarea placeholder="Enter your message" rows="4" cols="50" id="message-3b9a" name="message" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-3" required=""></textarea>
             </div>
             <div class="u-align-center u-form-group u-form-submit">
               <a href="#" class="u-border-2 u-border-black u-btn u-btn-rectangle u-btn-submit u-button-style u-none u-btn-1">Submit</a>
               <input type="submit" value="submit" class="u-form-control-hidden">
             </div>
-            <div class="u-form-send-message u-form-send-success">Thank you! Your message has been sent.</div>
+            <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
             <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
             <input type="hidden" value="" name="recaptchaResponse">
           </form>
         </div>
-        <div class="u-clearfix u-custom-html u-custom-html-1">
-          <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-          <title></title>
-          <link href="contact-form.css" rel="stylesheet">
-          <div class="fcf-body">
-            <div id="fcf-form">
-              <h3 class="fcf-h3">Contact us</h3>
-              <form id="fcf-form-id" class="fcf-form-class" method="post" action="contact-form-process.php">
-                <div class="fcf-form-group">
-                  <label for="Name" class="fcf-label">Your name</label>
-                  <div class="fcf-input-group">
-                    <input type="text" id="name" name="Name" class="fcf-form-control" required="">
-                  </div>
-                </div>
-                <div class="fcf-form-group">
-                  <label for="Email" class="fcf-label">Your email address</label>
-                  <div class="fcf-input-group">
-                    <input type="email" id="email" name="Email" class="fcf-form-control" required="">
-                  </div>
-                </div>
-                <div class="fcf-form-group">
-                  <label for="Message" class="fcf-label">Your message</label>
-                  <div class="fcf-input-group">
-                    <textarea id="message" name="Message" class="fcf-form-control" rows="6" maxlength="3000" required=""></textarea>
-                  </div>
-                </div>
-                <div class="fcf-form-group">
-                  <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-block fcf-btn-lg fcf-btn-primary">Send Message</button>
-                </div>
-                <div class="fcf-credit" id="fcf-credit"> Simple HTML email form provided by <a href="https://www.majesticform.com" target="_blank">MajesticForm</a>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="u-custom-php u-custom-php-1" data-custom-php="<!--custom_php--><?php
-if (isset($_POST['Email'])) {
-    // EDIT THE 2 LINES BELOW AS REQUIRED
-    $email_to = &quot;you@yourdomain.com&quot;;
-    $email_subject = &quot;New form submissions&quot;;
-    function problem($error)
-    {
-        echo &quot;We are very sorry, but there were error(s) found with the form you submitted. &quot;;
-        echo &quot;These errors appear below.<br><br>&quot;;
-        echo $error . &quot;<br><br>&quot;;
-        echo &quot;Please go back and fix these errors.<br><br>&quot;;
-        die();
-    }
-    // validation expected data exists
-    if (
-        !isset($_POST['Name']) ||
-        !isset($_POST['Email']) ||
-        !isset($_POST['Message'])
-    ) {
-        problem('We are sorry, but there appears to be a problem with the form you submitted.');
-    }
-    $name = $_POST['Name']; // required
-    $email = $_POST['Email']; // required
-    $message = $_POST['Message']; // required
-    $error_message = &quot;&quot;;
-    $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
-    if (!preg_match($email_exp, $email)) {
-        $error_message .= 'The Email address you entered does not appear to be valid.<br>';
-    }
-    $string_exp = &quot;/^[A-Za-z .'-]+$/&quot;;
-    if (!preg_match($string_exp, $name)) {
-        $error_message .= 'The Name you entered does not appear to be valid.<br>';
-    }
-    if (strlen($message) < 2) {
-        $error_message .= 'The Message you entered do not appear to be valid.<br>';
-    }
-    if (strlen($error_message) > 0) {
-        problem($error_message);
-    }
-    $email_message = &quot;Form details below.\n\n&quot;;
-    function clean_string($string)
-    {
-        $bad = array(&quot;content-type&quot;, &quot;bcc:&quot;, &quot;to:&quot;, &quot;cc:&quot;, &quot;href&quot;);
-        return str_replace($bad, &quot;&quot;, $string);
-    }
-    $email_message .= &quot;Name: &quot; . clean_string($name) . &quot;\n&quot;;
-    $email_message .= &quot;Email: &quot; . clean_string($email) . &quot;\n&quot;;
-    $email_message .= &quot;Message: &quot; . clean_string($message) . &quot;\n&quot;;
-    // create email headers
-    $headers = 'From: ' . $email . &quot;\r\n&quot; .
-        'Reply-To: ' . $email . &quot;\r\n&quot; .
-        'X-Mailer: PHP/' . phpversion();
-    @mail($email_to, $email_subject, $email_message, $headers);
-?>
-    <!-- include your success message below -->
-    Thank you for contacting us. We will be in touch with you very soon.
-<?php
-}
-?><!--/custom_php-->"></div>
       </div>
     </section>
 
@@ -339,15 +244,33 @@ if (isset($_POST['Email'])) {
 
 @media (max-width: 575px) {
   .u-cookies-consent .u-sheet-1 {
-    min-height: 121px;
+    min-height: 212px;
   }
 
   .u-cookies-consent .u-layout-cell-1 {
-    min-height: 100px;
+    min-height: 152px;
+  }
+
+  .u-cookies-consent .u-container-layout-1 {
+    padding-bottom: 30px;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .u-cookies-consent .u-text-1 {
+    margin-right: 20px;
+  }
+
+  .u-cookies-consent .u-text-2 {
+    margin-right: 158px;
   }
 
   .u-cookies-consent .u-layout-cell-2 {
-    min-height: 15px;
+    min-height: 152px;
+  }
+
+  .u-cookies-consent .u-container-layout-2 {
+    padding: 30px;
   }
 }</style></section>
 </body></html>
