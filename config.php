@@ -19,7 +19,7 @@ if (isset($_POST['name'])  && isset($_POST['email']) && isset($_POST['message'])
 		header("Location: test.html");
 	}else {
 
-		$sql = "INSERT INTO register(name, message) VALUES('$name','$email', '$message')";
+		$sql = "INSERT INTO register(name, email, message) VALUES('$name','$email', '$message')";
 		$res = mysqli_query($conn, $sql);
 
 		if ($res) {
