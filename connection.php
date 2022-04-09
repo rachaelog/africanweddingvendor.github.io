@@ -1,18 +1,43 @@
 <?php
-function OpenCon()
- {
- $dbhost = "localhost";
- $dbuser = "root";
- $dbpass = "";
- $db = "test";
- $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
+$name = filter_input(INPUT_POST, 'name');
+$email = filter_input(INPUT_POST, 'email');
+$message = filter_input(INPUT_POST, 'message');
 
- return $conn;
- }
+if (!empty($name)){
+if (!empty($email))
+if (!empty($message)){
+$host = "localhost";
+$dbusername = "root";
+$dbpassword = "";
+$dbname = "test";
+// Create connection
+$conn = new mysqli ($host, $dbusername, $dbpassword, $dbname);
 
-function CloseCon($conn)
- {
- $conn -> close();
- }
 
+if (mysqli_connect_error()){
+die('Connect Error ('. mysqli_connect_errno() .') '
+. mysqli_connect_error());
+}
+else{
+$sql = "INSERT INTO register (name, email, message)
+values ('$name','$email','$message')";
+if ($conn->query($sql)){
+echo "New record is inserted sucessfully";
+}
+else{
+echo "Error: ". $sql ."
+". $conn->error;
+}
+$conn->close();
+}
+}
+else{
+echo "Password should not be empty";
+die();
+}
+}
+else{
+echo "Username should not be empty";
+die();
+}
 ?>
