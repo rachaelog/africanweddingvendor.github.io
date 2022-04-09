@@ -1,13 +1,14 @@
-
-
 <?php
-// Create connection
-$connection = new mysqli ('localhost', 'root', '');
-if (!$connection){
-  die("Database Connection Failed" . mysqli_error($connection));
+
+$sname = "localhost";
+$uname = "root";
+$password = "";
+
+$db_name = "test_db";
+
+$conn = mysqli_connect($sname, $uname, $password, $db_name);
+
+if (!$conn) {
+	echo "Connection failed!";
+	exit();
 }
-$select_db = mysqli_select_db($connection, 'test');
-if (!$select_db){
-  die("Database Selection Failed" . mysqli_error($connection));
-  }
-  ?>
