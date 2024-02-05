@@ -5,6 +5,67 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <style>
+      body {
+          margin: 0;
+          padding: 0;
+          font-family: Arial, sans-serif;
+      }
+
+      .header-container {
+          position: relative;
+      }
+
+      .sticky-header {
+          position: fixed;
+          top: 0;
+          width: 100%;
+          background-color: #333;
+          color: #fff;
+          padding: 10px;
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+          transition: top 0.3s;
+      }
+
+      .content {
+          padding: 20px;
+          margin-top: 60px;
+      }
+
+      h1 {
+          margin: 0;
+      }
+
+      nav ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+      }
+
+      nav ul li {
+          display: inline;
+          margin-right: 15px;
+      }
+
+      nav a {
+          text-decoration: none;
+          color: #fff;
+      }
+  </style>
+  <script>
+      window.addEventListener('scroll', function() {
+          var header = document.querySelector('.sticky-header');
+          var scrollPosition = window.scrollY;
+
+          if (scrollPosition > 100) { // Adjust the value to the desired scroll position
+              header.style.top = '0';
+          } else {
+              header.style.top = '-60px'; // Hides the header off-screen
+          }
+      });
+  </script>
+</head>
+
     <title>About</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
 <link rel="stylesheet" href="About.css" media="screen">
@@ -31,6 +92,8 @@
   </head>
   <body data-home-page="Home.html" data-home-page-title="Home" class="u-body u-xl-mode"><header class="u-clearfix u-header u-valign-top-sm u-header" id="sec-de28"><a href="https://rachaelog.github.io/africanweddingvendor.github.io/Home.html" class="u-image u-logo u-image-1" data-image-width="300" data-image-height="300">
         <img src="images/AWV1.png" class="u-logo-image u-logo-image-1">
+        <div class="header-container">
+          <header class="sticky-header">
       </a><nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
         <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
           <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
@@ -53,6 +116,8 @@
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="About.html">About</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.html">Contact</a>
 </li></ul>
+</header>
+</div>
             </div>
           </div>
           <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
