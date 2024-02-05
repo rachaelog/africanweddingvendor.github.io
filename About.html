@@ -1,70 +1,78 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;"><head>
+<html style="font-size: 16px;">
+
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
+
+    <!-- CSS Styles -->
     <style>
-      body {
-          margin: 0;
-          padding: 0;
-          font-family: Arial, sans-serif;
-      }
+        /* Your CSS styles here */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
 
-      .header-container {
-          position: relative;
-      }
+        .header-container {
+            position: relative;
+        }
 
-      .sticky-header {
-          position: fixed;
-          top: 0;
-          width: 100%;
-          background-color: #333;
-          color: #fff;
-          padding: 10px;
-          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-          transition: top 0.3s;
-      }
+        .sticky-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            transition: top 0.3s;
+        }
 
-      .content {
-          padding: 20px;
-          margin-top: 60px;
-      }
+        .content {
+            padding: 20px;
+            margin-top: 60px;
+        }
 
-      h1 {
-          margin: 0;
-      }
+        h1 {
+            margin: 0;
+        }
 
-      nav ul {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-      }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-      nav ul li {
-          display: inline;
-          margin-right: 15px;
-      }
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
 
-      nav a {
-          text-decoration: none;
-          color: #fff;
-      }
-  </style>
-  <script>
-      window.addEventListener('scroll', function() {
-          var header = document.querySelector('.sticky-header');
-          var scrollPosition = window.scrollY;
+        nav a {
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
 
-          if (scrollPosition > 100) { // Adjust the value to the desired scroll position
-              header.style.top = '0';
-          } else {
-              header.style.top = '-60px'; // Hides the header off-screen
-          }
-      });
-  </script>
+    <!-- JavaScript for Sticky Header -->
+    <script>
+        window.addEventListener('scroll', function () {
+            var header = document.querySelector('.sticky-header');
+            var scrollPosition = window.scrollY;
+
+            if (scrollPosition > 100) {
+                header.style.top = '0';
+            } else {
+                header.style.top = '-60px';
+            }
+        });
+    </script>
 </head>
+
 
     <title>About</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
@@ -320,6 +328,5 @@
     padding: 30px;
   }
 }</style></section>
-    </header>
-  </div>
+
 </body></html>
